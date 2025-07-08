@@ -3,17 +3,17 @@ from flask_cors import CORS
 import openai
 import os
 
-# ساخت اپ Flask
+
 app = Flask(__name__)
 CORS(app)
 
-# دریافت کلید API از متغیر محیطی
-openai.api_key = os.getenv("OPENAI_API_KEY")
 
-# روت اصلی برای تست
+openai.api_key = os.getenv(" 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")
+
+
 @app.route('/')
 def home():
-    return "✅ ChatGPT Flask Server is Running!"
+    return " ChatGPT Flask Server is Running!"
 
 # روت چت برای دریافت پیام و پاسخ
 @app.route('/chat', methods=['POST'])
@@ -41,6 +41,6 @@ def chat():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-# اجرای لوکال برای تست (غیرفعال در سرور)
+
 if __name__ == '__main__':
     app.run(debug=False)
