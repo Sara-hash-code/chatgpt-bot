@@ -26,7 +26,7 @@ def chat():
             return jsonify({"error": "Message not provided"}), 400
 
         response = openai.ChatCompletion.create(
-            model="gpt-3.5-turbo",  # اگر اکانتت GPT-4 داره، اینو تغییر بده
+            model="gpt-3.5-turbo",  
             messages=[
                 {"role": "system", "content": "You are a helpful assistant."},
                 {"role": "user", "content": user_message}
